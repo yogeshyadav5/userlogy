@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+ <title>userlogy</title>
+ <style>
+    body{
+    background-image:url('dune-landscape-minimalist-wallpaper-3440x1440_15.jpg');
+    }
+  .popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   backdrop-filter: blur(10px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   visibility: hidden;
+  }
+
+  .popup-content {
+   background-color: grey;
+   padding: 20px;
+   text-align: center;
+  }
+
+
+
+  .popup-buttons button.okay {
+   background-color: white;
+  }
+
+  .popup-buttons button.cancel {
+   background-color: white;
+  }
+ </style>
+</head>
+<body>
+
+ <button id="btn">Click Me</button>
+
+ <div class="popup" id="myPopup">
+  <div class="popup-content">
+   <h2>Are you sure?</h2>
+   <div class="popup-buttons">
+    <button class="okay">Okay</button>
+    <button class="cancel">Cancel</button>
+   </div>
+  </div>
+ </div>
+
+ <script>
+  var Btn = document.getElementById("btn");
+  var popup = document.getElementById("myPopup");
+
+  btn.onclick = function() {
+   popup.style.visibility = "visible";
+   body.style.filter('blur');
+  }
+
+  var okbtn = popup.querySelector(".okay");
+  okbtn.onclick = function() {
+   console.log("Hello");
+   popup.style.visibility = "hidden";
+  }
+
+  var cancelbtn = popup.querySelector(".cancel");
+  cancelbtn.onclick = function() {
+   popup.style.visibility = "hidden";
+  }
+ </script>
+
+</body>
+</html>
